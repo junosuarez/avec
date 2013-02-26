@@ -1,0 +1,19 @@
+{
+  "name": "avec",
+  "version": "1.0.0",
+  "description": "some functions for working with promises",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:AgileDiagnosis/avec.git"
+  },
+  "keywords": [
+    "promises"
+  ],
+  "author": "Agile Diagnosis <hello@agilediagnosis.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
