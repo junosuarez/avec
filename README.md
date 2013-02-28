@@ -1,5 +1,5 @@
 # avec
-Eventual collection operations using promises
+Eventual ES5 array operations using promises
 
 ## installation
 
@@ -7,7 +7,7 @@ Eventual collection operations using promises
 
 ## usage
 
-Think of it like using LoDash or Underscore on an asynchronous collection.
+Think of it like using native ES5 Array.prototype methods on Promised arrays.
 
     var documents = getPromisedArrayOfStuffFromDB()
     avec(documents).forEach(function (document) {
