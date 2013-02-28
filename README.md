@@ -1,11 +1,43 @@
 # avec
-some functions for working with promises
+Eventual collection operations using promises
 
 ## installation
 
     $ npm install avec
 
+## usage
+
+Think of it like using LoDash or Underscore on an asynchronous collection.
+
+    var documents = getPromisedArrayOfStuffFromDB()
+    avec(documents).forEach(function (document) {
+      console.dir(document)
+    })
+
+    avec(documents)
+      .filter(x)
+      .map(x)
+      .reduce(x)
+      .then(function (aggregate) {
+        console.log('we can string things together')
+        // the neat thing about promises is that there's no `value()`
+        // or finalizer method to call, since each step of the way
+        // returns a valid promises/a `thenable` promise.
+      })
+
 ## api
+
+### `avec(promisedCollection)`
+
+Begins a promise chain.
+
+### Supported Array.prototype methods:
+
+`forEach`, `filter`, `map`, `reduce`, `reduceRight`, `every`,
+`some`, `concat`, `reverse`, `sort`, `indexOf`, `lastIndexOf`,
+`shift`, `unshift`, `pop`, `push`, `slice`, `splice`
+
+The return value for each of these is the a Promise of whatever the return value would be on a synchronous array.
 
 ### `avec(promise, continuation)`
 
@@ -26,6 +58,13 @@ Like calling `promise.then(function (val) { val.forEach(iterator) })`, Use when 
 ### `avec.map(promisedArray, scalarFunction`
 
 Like calling `promise.then(function (val) { return val.map(scalarFunction) })`. Returns a Promise<Array>
+
+## running the unit tests
+
+In package root directory:
+
+    $ npm install
+    $ npm test
 
 ## contributors
 
